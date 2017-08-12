@@ -10,8 +10,11 @@ var session = require('express-session');
 /*
 var logger = require('express-logger');
 */
+var mode = process.env.NODE_ENV || 'development';
+console.log(mode)
 var mongoStore = require('connect-mongo')(session);
-const dbUrl = 'mongodb://127.0.0.1:27017/movie';
+const dbUrl = mode === 'development'? "mongodb://127.0.0.1:27017/movie" : 'mongodb://movie_rw:13370761096@127.0.0.1:27017/movie';
+console.log(dbUrl)
 mongoose.connect(dbUrl);
 
 mongoose.Promise = global.Promise;
