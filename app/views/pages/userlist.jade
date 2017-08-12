@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+ .container
+  .row
+   table.table.table-hover.table-bordered.table-responsive
+    thead
+     th 账号
+     th 密码
+     th 创建时间
+     th 删除
+    tbody
+     each item in users
+      tr(class="item-id#{item._id}")
+       td= item.name
+       td= item.password
+       td= item.meta.createAt
+       td
+        a.btn.btn-danger(href='#') 删除
+
+
+
+
+
+

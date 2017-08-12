@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            table.table.table-hover.table-bordered.table-responsive
+                thead
+                    th 电影名字
+                    th 导演
+                    th 国家
+                    th 上映年份
+                    //th 录入时间
+                    th 海报
+                    th 链接地址
+                    th pv
+                    th 查看
+                    th 修改
+                    th 删除
+                tbody
+                    each item in movies
+                        tr(class="item-id#{item._id}")
+                            td= item.title
+                            td= item.director
+                            td= item.country
+                            td= item.year
+                            td(style='max-width: 100px;text-overflow: ellipsis;overflow: hidden;',title="#{item.poster}").text-capitalize= item.poster
+                            td(style='max-width:100px;text-overflow: ellipsis;overflow: hidden;',title="#{item.flash}")= item.flash
+                            //td= moment(item.meta.createAt).format('MM/DD/YY')
+                            td= item.pv
+                            td: a(target="_blank",href="/users/movie/#{item._id}") 查看
+                            td: a(target="_blank",href="/admin/?id=#{item._id}") 修改
+                            td
+                                button.btn.btn-danger.del(type='button',data-id="#{item._id}") 删除
+    script(src='/javascripts/admin.js' type='text/javascript')
+
+
+
+

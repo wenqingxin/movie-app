@@ -1,0 +1,15 @@
+extends ../layout
+block content
+    .container
+        .row
+            .col-xs-12.col-sm-6.col-md-4.col-md-push-4
+                form(method="post",action="/users/signin")
+                    h1 登录
+                    .form-group
+                        label(for="signinName") 用户名
+                        input#signinName.form-control(name="name",type='text')
+                    .form-group
+                        label(for="signinPasswd") 密码
+                        input#signinPasswd.form-control(name="password",type='password')
+                    .form-group
+                        button.btn.btn-success(type='submit') 登录
