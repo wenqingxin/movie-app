@@ -11,7 +11,7 @@ block content
           .panel-body
             if cat.movies &&cat.movies.length > 0
               each item in cat.movies
-                .col-md-2
+                .col-md-2.col-xs-6
                   .thumbnail
                     a(href="/users/movie/#{item._id}")
                       if(item.poster.indexOf('http')>-1)
