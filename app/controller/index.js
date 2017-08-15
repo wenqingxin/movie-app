@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   console.log('user in session:');
   console.log(req.session.user);
     Catetory.find({})
-        .populate({path:'movies',options:{limit:5}})
+        .populate({path:'movies',options:{limit:6}}).sort({'meta.createAt':-1})
         .exec(function (err,catetories) {
             if(err){
                 console.log(err);

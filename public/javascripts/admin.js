@@ -2,12 +2,12 @@
  * Created by Administrator on 2017/7/8 0008.
  */
 $(function () {
-   $('.del').click(function (e) {
+   $('.del-cat').click(function (e) {
        var target = $(e.target);
        var id = target.data('id');
       $.ajax({
           type:'DELETE',
-          url:'/admin/movie/delete?id='+id
+          url:'/admin/catetory/delete?id='+id
       }).done(function (result) {
           if(result.success === 1){
               $('.item-id'+id).remove();
@@ -27,7 +27,7 @@ $(function () {
                 crossDomain:true,
                 jsonp:'callback',
                 success:function (data) {
-                    alert(JSON.stringify(data));
+                    //alert(JSON.stringify(data));
                     $('#inputTitle').val(data.title)
                     $('#inputDirector').val(data.directors[0].name)
                     $('#inputCountry').val(data.countries[0])

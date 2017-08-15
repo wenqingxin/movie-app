@@ -8,9 +8,9 @@ block content
             form.form-horizontal(method="post",action="/admin/movie/catetory/new")
                 input(type='hidden' value=catetory._id name='id')
                 .form-group
-                    .col-sm-6
-                        label.col-sm-3.control-label(for="inputCatetory") 电影分类
-                    .col-sm-6
+                    .col-sm-3.col-sm-push-4
+                        label.control-label(for="inputCatetory") 电影分类
+                    .col-sm-3.col-sm-push-2
                         input#inputCatetory.form-control(type="text",name='name',value=catetory.name)
                 .form-group
                     .col-sm-12

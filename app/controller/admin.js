@@ -203,6 +203,19 @@ router.get('/movie/catetory/list',function (req,res,next) {
         })
     })
 });
+
+router.delete('/catetory/delete',function (req,res,next) {
+    let id = req.query.id;
+    Catetory.remove({_id:id},function (err,catetory) {
+        if(err){
+            console.log('删除失败');
+            res.json({success:0});
+        } else{
+            res.json({success:1});
+        }
+    })
+})
+
 router.delete('/movie/delete',function (req,res,next) {
     let id = req.query.id;
     Movie.remove({_id:id},function (err,movie) {
