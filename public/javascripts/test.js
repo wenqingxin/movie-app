@@ -5,8 +5,7 @@ $('#test1').on('click',function () {
    $.ajax({
        url: '/cookie',
        type: 'post',
-
-       success: function (res){
+       success: function (res) {
            //  alert(JSON.stringify(res));
        }
    })
