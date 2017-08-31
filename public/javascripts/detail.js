@@ -25,6 +25,7 @@ $(function () {
                 type:'hidden',
                 name:'cid',
                 value:commentId
+
             }).appendTo('#commentForm');
         }
     })
