@@ -10,7 +10,6 @@ var session = require('express-session');
 /*
 var logger = require('express-logger');
 */
-//hehe
 var mode = process.env.NODE_ENV || 'development';
 console.log(mode)
 var mongoStore = require('connect-mongo')(session);
@@ -82,4 +81,5 @@ if('development' === app.get('env')){
     mongoose.set('debug','true');
 
 }
+//我就试试
 module.exports = app;
