@@ -6,6 +6,8 @@ $('#test1').on('click',function () {
        url: '/cookie',
        type: 'post',
        success: function (res) {
+
+           //  alert(JSON.stringify(res));
            //  alert(JSON.stringify(res)  );
        }
    })
